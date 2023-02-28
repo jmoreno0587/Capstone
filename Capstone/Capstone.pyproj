@@ -59,6 +59,7 @@
     <Folder Include="Capstone\featUsers\static\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Capstone\featAuth\templates\SignUp.html" />
     <Content Include="requirements.txt" />
     <Content Include="Capstone\static\content\bootstrap.css" />
     <Content Include="Capstone\static\content\bootstrap.min.css" />

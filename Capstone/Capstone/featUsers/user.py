@@ -2,8 +2,8 @@ from flask import *
 from Capstone.models import db
 usr = Blueprint('usr',
                  __name__,
-                 template_folder='templates',
-                 static_folder='static',
+                 template_folder='featUsers/templates',
+                 static_folder='featUsers/static',
                  url_prefix='/usr')
 
 
