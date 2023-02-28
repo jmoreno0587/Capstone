@@ -1,5 +1,5 @@
 from flask import *
-
+from Capstone.models import db
 usr = Blueprint('usr',
                  __name__,
                  template_folder='templates',
@@ -9,6 +9,10 @@ usr = Blueprint('usr',
 
 # Edit User - Jessica
 # usr/edit
+
+# Sign up - Jessica
+#usr/signup
+
 # Delete User - Jessica
 # usr/del
 

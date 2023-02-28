@@ -33,6 +33,9 @@
     <Compile Include="Capstone\featUsers\user.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Capstone\models.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="Capstone\__init__.py" />
     <Compile Include="Capstone\views.py" />

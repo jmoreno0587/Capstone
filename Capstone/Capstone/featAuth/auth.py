@@ -1,5 +1,5 @@
 from flask import *
-
+from Capstone.models import db
 auth = Blueprint('auth',
                  __name__,
                  template_folder='templates',

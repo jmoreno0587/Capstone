@@ -1,7 +1,7 @@
 """
 Routes and views for the flask application.
 """
-
+from Capstone.models import db
 from datetime import datetime
 from flask import render_template
 from Capstone import app
@@ -35,8 +35,6 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
-
-
 
 # web resource page - lily
 @app.route('/resources')

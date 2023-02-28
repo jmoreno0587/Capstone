@@ -1,5 +1,5 @@
 from flask import *
-
+from Capstone.models import db
 proj = Blueprint('proj',
                  __name__,
                  template_folder='templates',
