@@ -23,6 +23,7 @@ usr = Blueprint('usr',
 
 # List and search users - Jamia
 # usr/browse
+# shows contents of user table for testing
 @usr.route('/browse')
 def browse_Users():
     users = Users.query.all()
@@ -34,6 +35,8 @@ def browse_Users():
         }
     return jsonify(res)
 
+
+## Show contents of password table for testing
 @usr.route('/auth')
 def view_Auths():
     auths = Auths.query.all()
