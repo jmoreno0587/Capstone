@@ -1,5 +1,6 @@
 from flask import *
-from Capstone.models import db, User
+from Capstone.models import db, Users
+from datetime import datetime
 auth = Blueprint('auth',
                  __name__,
                  template_folder='templates',
@@ -19,8 +20,8 @@ def sign_up():
         print(f"the username: {username} was sent in a POST req")
         pw1 = request.form.get("pw1")
         pw2 = request.form.get("pw2")
-        email_exists = User.query.filter_by(email=email).first()
-        username_exists = User.query.filter_by(username=username).first()
+        email_exists = Users.query.filter_by(email=email).first()
+        username_exists = Users.query.filter_by(userName=username).first()
         if email_exists:
             flash('Email is already taken.', category='error')
         elif username_exists:
@@ -43,4 +44,4 @@ def sign_up():
             #login_user(new_user, remember=True)
             flash('User account created!',category='success')
             return redirect(url_for('views.home'))
-    return render_template("SignUp.html")
+    return render_template("SignUp.html", title = 'Sign Up', year = datetime.now().year)
