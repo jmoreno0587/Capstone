@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="top-pad">
+    <div class="jumbotron">
+        <h1>500 Forbidden</h1>
+        <p class="lead">
+            Hola Friend! You need to be logged in to view this Page.
+        </p>
+        <p>
+            To continue, either click Login above or click it here ->
+            <!-- Need to change url for login -->
+            <a href="{{ url_for('home') }}" class="btn btn-primary btn-large">Login </a>
+    </div>
+
+</div>
+{% endblock %}

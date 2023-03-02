@@ -6,6 +6,16 @@ from datetime import datetime
 from flask import render_template
 from Capstone import app
 
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('500.html', title = '500 Forbidden', year=datetime.now().year,
+                               ), 404
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html', title = '404 Not Found', year=datetime.now().year,
+                               ), 404
+
 @app.route('/')
 @app.route('/home')
 def home():
