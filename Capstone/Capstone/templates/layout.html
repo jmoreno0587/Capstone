@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!-- Begin Nav Bar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -25,7 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li><a class="nav-item" href="{{ url_for('home') }}">Home</a></li>
                     <li><a class="nav-item" href="{{ url_for('about') }}">About</a></li>
-                    <li><a class="nav-item"  href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a class="nav-item" href="{{ url_for('contact') }}">Contact</a></li>
                     <!--testing-->
                     <li class="nav-item  dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,32 +36,42 @@
                             <li><a class="nav-item dropdown-item" href="{{ url_for('usr.browse_Users') }}">User data</a></li>
                             <li><a class="dropdown-item nav-item" href="{{ url_for('usr.view_Auths') }}">Auth data</a></li>
                             <li><a class="dropdown-item nav-item" href="#">Something else here</a></li>
-                    
+
                         </ul>
-
-
                     </li>
-
-                    <!--end test-->
                 </ul>
-
-
                 <!-- put if statement around
-     If not logged in the use this code-->
+                If not logged in the use this code-->
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url_for('auth.sign_up') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
-<!-- if logged in use this code -->
+                <!-- if logged in use this code -->
                 <!--<ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> User Name</a></li>
-                    
+
                 </ul>-->
 
             </div>
         </div>
     </div>
 
+    <!-- End Nav Bar / Begin Flash Message-->
+    <br />
+    <div>
+        {% for category, message in get_flashed_messages
+        (with_categories=true) %}
+        <div class="alert alert-{{category}} alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-hidden="true">
+                &times;
+            </button>
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- begin content -->
     <div class="container body-content">
         {% block content %}{% endblock %}
         <hr />
@@ -68,6 +79,8 @@
             <p>&copy; {{ year }} - My Flask Application</p>
         </footer>
     </div>
+
+    <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
     <script src="/static/scripts/jquery-1.10.2.js"></script>
     <script src="/static/scripts/bootstrap.js"></script>

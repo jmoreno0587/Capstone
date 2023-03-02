@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="top-pad">
+    <div class="jumbotron">
+        <h1>404 Page Not Found</h1>
+        <p class="lead">
+            Hola Friend! Looks like in your quest you have reached a
+            location which does not exist yet.
+        </p>
+        <p>
+            To continue, either check your map location (URL) or go
+            
+        <a href="{{ url_for('home') }}" class="btn btn-primary btn-large">Back to Home &raquo;</a>
+    </div>
+
+</div>
+{% endblock %}
