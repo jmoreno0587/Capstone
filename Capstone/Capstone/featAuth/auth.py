@@ -37,7 +37,7 @@ def sign_up():
         # elif not re.match(regex,email):
         #     flash('Invalid email', category='error')
         else:
-            #new_user = User(email=email,username=username,
+            #new_user = Users(email=email,username=username,
             #                password=generate_password_hash(pw1, method='sha256'))
             #db.session.add(new_user)
             #db.session.commit()
