@@ -8,6 +8,10 @@ auth = Blueprint('auth',
                  url_prefix='/auth')
 
 # Login in log out, user session - lily
+@auth.route('/login')
+def login():
+    return render_template('login.html', title = 'Login',
+                        year =   datetime.now().year)
 
 
 ### define read and write permissions to our server
