@@ -59,6 +59,14 @@
     <Folder Include="Capstone\featUsers\static\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Capstone\featAuth\templates\SignUp.html" />
+    <Content Include="Capstone\static\content\GroupProject.jpeg" />
+    <Content Include="Capstone\static\content\projectExample1.jpg" />
+    <Content Include="Capstone\static\content\projectExample2.jpg" />
+    <Content Include="Capstone\static\content\projectExample3.jpg" />
+    <Content Include="Capstone\static\content\Projects.jpg" />
+    <Content Include="Capstone\templates\404.html" />
+    <Content Include="Capstone\templates\500.html" />
     <Content Include="requirements.txt" />
     <Content Include="Capstone\static\content\bootstrap.css" />
     <Content Include="Capstone\static\content\bootstrap.min.css" />
