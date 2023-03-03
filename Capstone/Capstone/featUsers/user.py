@@ -12,8 +12,7 @@ usr = Blueprint('usr',
 # Edit User - Jessica
 # usr/edit
 
-# Sign up - Jessica
-#usr/signup
+
 
 # Delete User - Jessica
 # usr/del
@@ -53,5 +52,12 @@ def view_Auths():
 
 # my account page - Jamia
 # usr/account
+@usr.route('/account')
+def account():
+    
+    user = Users.query.get_or_404(250)
+    username= user.userName
+
+    return render_template('account.html',  username = username)
 
 # site notifications - lily
