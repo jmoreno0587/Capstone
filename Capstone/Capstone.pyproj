@@ -59,6 +59,7 @@
     <Folder Include="Capstone\featUsers\static\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Capstone\featAuth\templates\login.html" />
     <Content Include="Capstone\featAuth\templates\SignUp.html" />
     <Content Include="Capstone\templates\404.html" />
     <Content Include="Capstone\templates\500.html" />
