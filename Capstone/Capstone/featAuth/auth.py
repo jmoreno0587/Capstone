@@ -8,6 +8,10 @@ auth = Blueprint('auth',
                  url_prefix='/auth')
 
 # Login in log out, user session - lily
+@auth.route('/login')
+def login():
+    return render_template('login.html', title = 'Login',
+                        year =   datetime.now().year)
 
 
 ### define read and write permissions to our server
@@ -37,7 +41,7 @@ def sign_up():
         # elif not re.match(regex,email):
         #     flash('Invalid email', category='error')
         else:
-            #new_user = User(email=email,username=username,
+            #new_user = Users(email=email,username=username,
             #                password=generate_password_hash(pw1, method='sha256'))
             #db.session.add(new_user)
             #db.session.commit()
