@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - My Flask Application</title>
+    <title>{{ title }} - Agile Project Match Up</title>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">-->
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
 </head>
 
 <body>
+    <!-- Begin Nav Bar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -18,28 +20,73 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand">Application name</a>
+                <a href="/" class="navbar-brand">Project Match Up</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a class="nav-item" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a class="nav-item" href="{{ url_for('about') }}">About</a></li>
+                    <li><a class="nav-item" href="{{ url_for('contact') }}">Contact</a></li>
+                    <!--testing-->
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Links for Testing
+                        </a>
+                        <ul class="nav navbar-nav dropdown-menu">
+                            <li><a class="nav-item dropdown-item" href="{{ url_for('usr.browse_Users') }}">User data</a></li>
+                            <li><a class="dropdown-item nav-item" href="{{ url_for('usr.view_Auths') }}">Auth data</a></li>
+                            <li><a class="dropdown-item nav-item" href="#">Something else here</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
+                <!-- put if statement around
+    If not logged in the use this code-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url_for('auth.sign_up') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+
+                <!-- if logged in use this code -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> User Name</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+                </ul>
+
+
             </div>
         </div>
     </div>
 
+    <!-- End Nav Bar / Begin Flash Message-->
+    <br />
+    <div>
+        {% for category, message in get_flashed_messages
+        (with_categories=true) %}
+        <div class="alert alert-{{category}} alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-hidden="true">
+                &times;
+            </button>
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- begin content -->
     <div class="container body-content">
         {% block content %}{% endblock %}
         <hr />
         <footer>
-            <p>&copy; {{ year }} - My Flask Application</p>
+            <p>&copy; {{ year }} - Created By Jessica, Lilly, Jamia, and Luke</p>
         </footer>
     </div>
 
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
     <script src="/static/scripts/jquery-1.10.2.js"></script>
     <script src="/static/scripts/bootstrap.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>-->
     <script src="/static/scripts/respond.js"></script>
     {% block scripts %}{% endblock %}
 

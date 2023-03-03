@@ -40,3 +40,22 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+
+
+navbar-nav  ul li {
+    display: inline-block;
+    line-height: 60px;
+    margin-left: 10px;
+}
+
+.dropdown-menu {
+    background-color: black;
+}
+
+.form-group {
+    display: block;
+    width: 25%;
+    margin: 0 auto;
+}
+
